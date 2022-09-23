@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Jogo da Forca</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header class="cabecalho">
+            <img src="img/logoAlura.png" alt="Logo Alura" class="logo">
+        </header>
+
+        <main>
+            <section class="sessao-forca">
+                <div id="dica" class="dica"></div>
+                <div class="forca">
+                    <img src="img/forca.png" id="imagem-forca">  
+                </div>
+            </section>
+
+            <section class="palavra-jogo">
+                <div id="div-desaparece">
+                    <p>Jogo da Forca</p>
+                </div>
+                <div id="palavra-secreta-div"></div>
+            </section>
+
+            <section id="sessao-teclado">
+                <div class="teclado">
+                    <div class="teclado-linha1">
+                        <button id="Q" class="botao-teclado" onclick="clicaLetra('Q');">Q</button>
+                        <button id="W" class="botao-teclado" onclick="clicaLetra('W');">W</button>
+                        <button id="E" class="botao-teclado" onclick="clicaLetra('E');">E</button>
+                        <button id="R" class="botao-teclado" onclick="clicaLetra('R');">R</button>
+                        <button id="T" class="botao-teclado" onclick="clicaLetra('T');">T</button>
+                        <button id="Y" class="botao-teclado" onclick="clicaLetra('Y');">Y</button>
+                        <button id="U" class="botao-teclado" onclick="clicaLetra('U');">U</button>
+                        <button id="I" class="botao-teclado" onclick="clicaLetra('I');">I</button>
+                        <button id="O" class="botao-teclado" onclick="clicaLetra('O');">O</button>
+                        <button id="P" class="botao-teclado" onclick="clicaLetra('P');">P</button>    
+                    </div> 
+                    <div class="teclado-linha2">
+                        <button id="A" class="botao-teclado" onclick="clicaLetra('A');">A</button>
+                        <button id="S" class="botao-teclado" onclick="clicaLetra('S');">S</button>
+                        <button id="D" class="botao-teclado" onclick="clicaLetra('D');">D</button>
+                        <button id="F" class="botao-teclado" onclick="clicaLetra('F');">F</button>
+                        <button id="G" class="botao-teclado" onclick="clicaLetra('G');">G</button>
+                        <button id="H" class="botao-teclado" onclick="clicaLetra('H');">H</button>
+                        <button id="J" class="botao-teclado" onclick="clicaLetra('J');">J</button>
+                        <button id="K" class="botao-teclado" onclick="clicaLetra('K');">K</button>
+                        <button id="L" class="botao-teclado" onclick="clicaLetra('L');">L</button>
+                        <button id="Ç" class="botao-teclado" onclick="clicaLetra('Ç');">Ç</button>
+                    </div>
+                    <div class="teclado-linha3">
+                        <button id="Z" class="botao-teclado" onclick="clicaLetra('Z');">Z</button>
+                        <button id="X" class="botao-teclado" onclick="clicaLetra('X');">X</button>
+                        <button id="C" class="botao-teclado" onclick="clicaLetra('C');">C</button>
+                        <button id="V" class="botao-teclado" onclick="clicaLetra('V');">V</button>
+                        <button id="B" class="botao-teclado" onclick="clicaLetra('B');">B</button>
+                        <button id="N" class="botao-teclado" onclick="clicaLetra('N');">N</button>
+                        <button id="M" class="botao-teclado" onclick="clicaLetra('M');">M</button>
+                    </div>   
+                </div> 
+            </section>
+
+            <section class="botoes">
+                <button onclick="iniciaJogo()">Iniciar</button>
+                <button onclick="mostraPopupAddPalavra()">Adicionar Palavra</button>
+                <button onclick="desisteJogo()">Desistir</button>
+            </section>
+
+            <div id="popup">
+                <div>
+                    <img id="img" src="img/alegria.png">
+                    <p id="mensagem">Parabéns! Você acertou!</p>
+                    <button onclick="novoJogo()">Novo Jogo</button>    
+                </div>
+            </div>
+
+            <div id="popupAddPalavra">
+                <div>
+                    <img src="img/amigos.png">
+                    <p>Palavra</p>
+                    <input id="inputPalavra" type="text">
+                    <p>Dica</p>
+                    <input id="inputDica" type="text">
+                    <button onclick="adicionaPalavra()">OK</button>
+                    <button onclick="fechaPopupAddPalavra()">Sair</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="rodape">
+            <p>Desenvolvido por: Tássia Santos &copy; 2022</p>
+            <p>Oracle Next Education T3 | Alura </p>
+            
+        </footer>  
+
+        <script src="palavras.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

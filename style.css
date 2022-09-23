@@ -1,0 +1,495 @@
+body {
+    font-family: 'Indie Flower', cursive;
+    background: linear-gradient(rgb(125, 126, 158),#FEFEFE);
+}
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    height: 30px;
+    padding: 5px 0;
+}
+
+.logo {
+    padding-left: 2%;
+    height: 35px;
+}
+
+.sessao-forca {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.dica {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px auto;
+
+    visibility: hidden;
+}
+
+.forca {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+#imagem-forca {
+    width: 35%;
+}
+
+.palavra-jogo {
+    text-align: center;
+    height: 40px;
+}
+
+.palavra-jogo div p {
+    font-size: 2em;
+}
+
+#palavra-secreta-div {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 25px;
+    visibility: hidden;
+}
+
+.palavra-secreta-letra { 
+    margin: 0 2px 0 2px;
+    border-bottom: 2px solid black;
+}
+
+#sessao-teclado {
+    display: none;
+}
+
+.teclado {
+    width: 50%;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.teclado button {
+    font-family: 'Indie Flower', cursive;
+    font-size: 18px;
+    margin: 2px 0;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.teclado button:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botoes {
+    text-align: center;
+}
+
+.botoes button {
+    font-family: 'Indie Flower', cursive;
+    font-size: 18px;
+    margin: 10px 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.botoes button:hover, #popup button:hover, #popupAddPalavra button:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* popup ganhou/perdeu */
+#popup{
+    width: 30%;
+    height: 50%;
+    position: absolute;
+    top: 12%;
+    left: 35%;
+    right: 50%;
+    text-align: center;
+    border-radius: 15px;
+    
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+    backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur( 3px );
+
+    display: flex;
+    flex-direction: column;
+
+    display: none;
+}
+
+#popup div {
+    margin: auto 0;
+    padding: 5px;
+}
+/* popup adicionar palavra */
+#popupAddPalavra {
+    width: 30%;
+    height: 60%;
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    right: 50%;
+    text-align: center;
+    border-radius: 15px;
+    
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+    backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur( 3px );
+
+    display: flex;
+    flex-direction: column;
+
+    display: none;
+}
+
+#popupAddPalavra div {
+    margin: auto 0;
+}
+
+#popupAddPalavra div input {
+    width: 90%;
+    height: 25px;
+    margin: 5px 0;
+    border: 2px solid darkgray;
+    border-radius: 10px;
+}
+
+/*os dois popups*/
+#popup div img , #popupAddPalavra div img{
+    width: 40%;
+}
+
+#popup p, #popupAddPalavra p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#popup button, #popupAddPalavra button {
+    font-family: 'Indie Flower', cursive;
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 2px solid darkgray;
+    border-radius: 5px;
+}
+
+.rodape {
+    display: flex;
+    flex-direction: row;
+    margin-top: 200px;
+    justify-content: center;
+}
+
+.rodape p {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: #495057;
+    font-size: 10px;
+    padding: 5px 5px;
+}
+
+.rodape a {
+    padding: 10px 0;
+}
+
+.rodape a img {
+    height: 15px;
+    padding: 2px 0;
+}
+
+.badge {
+    height: 20px;
+}
+
+@media screen and (max-width: 780px) {
+    .dica {
+        font-size: 18px;
+    }
+
+    #imagem-forca {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+
+    .teclado {
+        width: 100%;
+    }
+
+    #popupAddPalavra {
+        width: 40%;
+        height: 70%;
+        left: 30%;
+        right: 30%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .dica {
+        font-size: 18px;
+    }
+
+    #imagem-forca {
+        width: 65%;
+        margin-bottom: 10px;
+    }
+
+    .teclado {
+        width: 100%;
+    }
+
+    #popup {
+        width: 50%;
+        height: 60%;
+        top: 15%;
+        left: 25%;
+        right: 25%;
+    }
+
+    #popupAddPalavra {
+        width: 50%;
+        height: 70%;
+        top: 10%;
+        left: 25%;
+        right: 25%;
+    }
+
+    #popup p, #popup button {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .dica {
+        font-size: 15px;
+    }
+
+    #popup {
+        width: 60%;
+        height: 50%;
+        top: 15%;
+        left: 20%;
+        right: 20%;
+    }
+
+    #popup img, #popupAddPalavra img {
+        width: 30%;
+    }
+
+    #popup p, #popup button, #popupAddPalavra p, #popupAddPalavra button {
+        font-size: 15px;
+    }
+
+    #popupAddPalavra {
+        width: 70%;
+        height: 70%;
+        top: 10%;
+        left: 15%;
+        right: 15%;
+    }
+
+    .rodape {
+        flex-direction: column;
+    }
+
+    .rodape p {
+        padding: 2px 0;
+    }
+
+    .imagem-rodape {
+        text-align: center;
+        padding: 0;
+        margin: 3px 0;
+    }
+
+    .badge {
+        width: 20px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .dica {
+        font-size: 15px;
+    }
+
+    #imagem-forca {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .palavra-jogo {
+        height: 20px;
+    }
+
+    .palavra-jogo p {
+        font-size: 20px;
+    }
+
+    #palavra-secreta-div {
+        font-size: 20px;
+    }
+
+    .sessao-teclado {
+        width: 100%;
+    }
+
+    .teclado {
+        width: 100%;
+    }
+
+    .teclado button {
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+
+    .botoes {
+        display: flex;
+        flex-direction: column;
+        margin-top: 25px;
+    }
+    .botoes button {
+        font-size: 10px;
+        margin: 5px 20px;
+    }
+
+    #popup {
+        width: 60%;
+        height: 43%;
+        top: 20%;
+        left: 20%;
+        right: 20%;
+    }
+
+    #popup p, #popup button, #popupAddPalavra p, #popupAddPalavra button {
+        font-size: 15px;
+    }
+
+    #popupAddPalavra {
+        width: 70%;
+        height: 70%;
+        top: 10%;
+        left: 15%;
+        right: 15%;
+    }
+
+    .rodape {
+        flex-direction: column;
+    }
+
+    .rodape p {
+        padding: 2px 0;
+    }
+
+    .imagem-rodape {
+        text-align: center;
+        padding: 0;
+        margin: 3px 0;
+    }
+
+    .badge {
+        width: 20px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .dica {
+        font-size: 15px;
+    }
+
+    #imagem-forca {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .palavra-jogo {
+        height: 20px;
+    }
+
+    .palavra-jogo p {
+        font-size: 20px;
+    }
+
+    #palavra-secreta-div {
+        font-size: 15px;
+    }
+
+    .sessao-teclado {
+        padding: 0 3px;
+    }
+
+    .teclado {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+
+    .teclado-linha1, .teclado-linha2 {
+        width: 100%;
+    }
+
+    .teclado button {
+        font-size: 8px;
+        padding: 3px 5px;
+    }
+
+    .botoes {
+        display: flex;
+        flex-direction: column;
+        margin-top: 25px;
+    }
+    .botoes button {
+        font-size: 8px;
+        margin: 5px 20px;
+    }
+
+    #popup{
+        width: 70%;
+        height: 40%;
+        top: 20%;
+        left: 15%;
+        right: 15%;
+    }
+
+    #popup p, #popup button, #popupAddPalavra p, #popupAddPalavra button {
+        font-size: 15px;
+    }
+
+    #popupAddPalavra {
+        width: 80%;
+        top: 10%;
+        left: 10%;
+        right: 15%;
+    }
+
+    .rodape {
+        flex-direction: column;
+    }
+
+    .rodape p {
+        padding: 2px 0;
+    }
+
+    .imagem-rodape {
+        text-align: center;
+        padding: 0;
+        margin: 3px 0;
+    }
+
+    .badge {
+        width: 20px;
+        margin: 0 auto;
+    }
+}
